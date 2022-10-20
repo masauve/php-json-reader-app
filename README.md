@@ -20,6 +20,34 @@ There is 2 options to retrieve the require image for this demo.
 
     Build the container from a Fork or Clone of this repository and uploaded to your container registry.
 
+Example using podman:
+* Build the image
+    ```
+    podman build -t php-json-reader .
+    ```
+* Test running the image localy.
+    ```
+    podman run --name php-reader -d -p 8080:8080 localhost/php-json-reader
+    ```
+    
+    The image can now be access at http://localhost:8080
+
+    :warning: The config file doesn't display since no volume is mounted.
+
+* Stop the container
+    ```
+    podman stop php-reader
+    ```
+
+* Tag the image
+    ```
+    podman *tag localhost/php-json-reader [YOUR_REGISTRY_URL]/php-json-reader:stable
+    ```
+* Push the image
+    ```
+    podman push [IMAGE_TAG_CREATE_BEFORE]
+    ```
+
 * ##### Option 2
 
     Use the image that was already build found at 

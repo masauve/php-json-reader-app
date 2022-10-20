@@ -4,7 +4,9 @@
 
     <body>
 
-    <h1>This application read a config.json file and output the content. An example of the config file can be found in the doc folder.</h1>
+    <h1>This application read a config.json file and output the content.</h1>
+        
+    <p>An example of the config file can be found in the doc folder.</p>
 
     <b>The config.json file is found at:</b> /opt/
 
