@@ -1,9 +1,7 @@
-apiVersion: v1
+apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
   labels:
     app: php-cm
-    template: application-template-stibuild
   name: php-cm
-spec: {}
 
