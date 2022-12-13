@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  config.json: |-
+    {
+        "environment": "dev",
+        "release": "0.0.1",
+        "description": "test config map injection in volume"
+    }
+kind: ConfigMap
+metadata:
+  name: config

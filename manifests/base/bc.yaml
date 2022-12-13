@@ -1,0 +1,41 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: php-cm
+    app.kubernetes.io/component: php-cm
+    app.kubernetes.io/instance: php-cm
+  name: php-cm
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    contextDir: app
+    git:
+      uri: https://github.com/masauve/php-json-reader-app
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: php:8.0-ubi8
+        namespace: openshift
+    type: Source
+  output: 
+    to:
+      kind: "ImageStreamTag"
+      name: "php-cm:latest"
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: D91csbxOOiSgjGa1WtSe
+    type: GitHub
+  - generic:
+      secret: R_daFtmqOMmydf0h4L0x
+    type: Generic
+  - type: ConfigChange
+  - imageChange: {}
+    type: ImageChange

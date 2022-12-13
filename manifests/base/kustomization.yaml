@@ -1,0 +1,9 @@
+namespace: php-demo
+
+resources:
+- namespace.yaml
+- bc.yaml
+- deployment.yaml
+- config-map.yaml
+- service.yaml
+- is.yaml

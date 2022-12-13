@@ -1,0 +1,71 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "annotations": {
+      "openshift.io/description": "",
+      "openshift.io/display-name": "",
+      "openshift.io/requester": "msauve@redhat.com",
+      "openshift.io/sa.scc.mcs": "s0:c33,c12",
+      "openshift.io/sa.scc.supplemental-groups": "1001080000/10000",
+      "openshift.io/sa.scc.uid-range": "1001080000/10000",
+      "operator.tekton.dev/prune.hash": "e12cf88878007ab90299fa28c92d42daf72a1dda6ff604ea40c1f1da0f1f5e1d"
+    },
+    "creationTimestamp": "2022-12-13T18:24:36Z",
+    "deletionTimestamp": "2022-12-13T18:43:01Z",
+    "labels": {
+      "kubernetes.io/metadata.name": "php-demo",
+      "openshift-pipelines.tekton.dev/namespace-reconcile-version": "1.8.2",
+      "pod-security.kubernetes.io/audit": "baseline",
+      "pod-security.kubernetes.io/audit-version": "v1.24",
+      "pod-security.kubernetes.io/warn": "baseline",
+      "pod-security.kubernetes.io/warn-version": "v1.24"
+    },
+    "name": "php-demo",
+    "resourceVersion": "314099959",
+    "uid": "a4f50b96-ff73-407a-be78-3489c1bf9f94"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2022-12-13T18:43:06Z",
+        "message": "Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: the server is currently unable to handle the request",
+        "reason": "DiscoveryFailed",
+        "status": "True",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2022-12-13T18:43:07Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2022-12-13T18:43:07Z",
+        "message": "All content successfully deleted, may be waiting on finalization",
+        "reason": "ContentDeleted",
+        "status": "False",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2022-12-13T18:43:08Z",
+        "message": "All content successfully removed",
+        "reason": "ContentRemoved",
+        "status": "False",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2022-12-13T18:43:07Z",
+        "message": "All content-preserving finalizers finished",
+        "reason": "ContentHasNoFinalizers",
+        "status": "False",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}
