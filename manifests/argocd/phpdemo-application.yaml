@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: phpdemo
   source:
-    path: gitops/base
+    path: manifests/base
     repoURL: https://github.com/masauve/php-json-reader-app.git
     targetRevision: main
   syncPolicy:
