@@ -8,13 +8,13 @@
         
     <p>An example of the config file can be found in the doc folder.</p>
 
-    <b>The config.json file is found at:</b> /opt/
+    <b>The config.json file is found at:</b> /opt/data/
 
     <h3> File output </h3>
 
     <?php
         // Read the JSON file
-        $json = file_get_contents('/opt/config.json');
+        $json = file_get_contents('/opt/data/config.json');
 
         // Decode the JSON file
         $json_data = json_decode($json,true);
