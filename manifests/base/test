@@ -1,0 +1,45 @@
+diff -u -N /var/folders/2x/gg9fmfgs6zl4hpq4qy45ynlh0000gn/T/LIVE-3110880500/v1.ConfigMap.php-demo.testcm /var/folders/2x/gg9fmfgs6zl4hpq4qy45ynlh0000gn/T/MERGED-712891719/v1.ConfigMap.php-demo.testcm
+--- /var/folders/2x/gg9fmfgs6zl4hpq4qy45ynlh0000gn/T/LIVE-3110880500/v1.ConfigMap.php-demo.testcm	2022-12-14 10:49:54
++++ /var/folders/2x/gg9fmfgs6zl4hpq4qy45ynlh0000gn/T/MERGED-712891719/v1.ConfigMap.php-demo.testcm	2022-12-14 10:49:54
+@@ -2,6 +2,7 @@
+ data:
+   comment: out of band
+   myenv: app
++  toto: tata
+   version: "1"
+ kind: ConfigMap
+ metadata:
+@@ -9,8 +10,6 @@
+     kubectl.kubernetes.io/last-applied-configuration: |
+       {"apiVersion":"v1","data":{"myenv":"app","version":"1"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"phpdemo"},"name":"testcm","namespace":"php-demo"}}
+   creationTimestamp: "2022-12-14T15:20:21Z"
+-  labels:
+-    app.kubernetes.io/instance: phpdemo
+   managedFields:
+   - apiVersion: v1
+     fieldsType: FieldsV1
+@@ -29,9 +28,6 @@
+         f:annotations:
+           .: {}
+           f:kubectl.kubernetes.io/last-applied-configuration: {}
+-        f:labels:
+-          .: {}
+-          f:app.kubernetes.io/instance: {}
+     manager: argocd-application-controller
+     operation: Update
+     time: "2022-12-14T15:23:08Z"
+@@ -43,6 +39,14 @@
+     manager: Mozilla
+     operation: Update
+     time: "2022-12-14T15:24:17Z"
++  - apiVersion: v1
++    fieldsType: FieldsV1
++    fieldsV1:
++      f:data:
++        f:toto: {}
++    manager: kubectl-client-side-apply
++    operation: Update
++    time: "2022-12-14T15:49:55Z"
+   name: testcm
+   namespace: php-demo
+   resourceVersion: "317292938"

@@ -4,4 +4,10 @@ data:
   version: "1"
 kind: ConfigMap
 metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"myenv":"app","version":"1"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"phpdemo"},"name":"testcm","namespace":"php-demo"}}
+  labels:
+    app.kubernetes.io/instance: phpdemo
   name: testcm
+  namespace: php-demo
